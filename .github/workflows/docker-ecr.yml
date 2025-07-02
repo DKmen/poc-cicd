@@ -6,6 +6,11 @@ on:
     branches:
       - main
     # Only run if the PR is merged into main
+  push:
+    branches:
+      - main
+    # Only run on pushes to the main branch
+    # This is useful for manual runs or if you want to trigger builds on direct pushes
 
 jobs:
   build-and-push:
