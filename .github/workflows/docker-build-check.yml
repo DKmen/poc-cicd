@@ -1,0 +1,20 @@
+name: Docker Build Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image (PR check)
+        run: |
+          docker build -t pr-check-image:${{ github.sha }} .
