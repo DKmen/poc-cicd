@@ -12,6 +12,10 @@ on:
     # Only run on pushes to the main branch
     # This is useful for manual runs or if you want to trigger builds on direct pushes
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
